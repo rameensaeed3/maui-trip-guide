@@ -469,9 +469,16 @@
     .activity-note { font-size: 13px; }
     .activity-tags { gap: 4px; margin-top: 6px; }
     .tag { font-size: 11px; padding: 3px 8px; }
-    .bookings-table { font-size: 11px; }
-    .bookings-table th, .bookings-table td { padding: 7px 7px; font-size: 12px; }
-    .bookings-table th:nth-child(2), .bookings-table td:nth-child(2) { min-width: 140px; }
+    .bookings-table { font-size: 12px; }
+    .bookings-table thead { display: none; }
+    .bookings-table, .bookings-table tbody, .bookings-table tr, .bookings-table td { display: block; width: 100%; }
+    .bookings-table tr { border-bottom: 1px solid #e0d6cc; padding: 10px 0; }
+    .bookings-table tr.total-row { padding: 10px 12px; border-radius: 6px; }
+    .bookings-table td { padding: 2px 12px; border: none; font-size: 13px; }
+    .bookings-table td:nth-child(3) { padding-top: 4px; }
+    .bookings-table td:nth-child(4) { font-weight: 500; color: var(--ocean); padding-top: 4px; }
+    .bookings-table tr.total-row td { color: white !important; padding: 3px 0; }
+    .bookings-table tr.total-row td:nth-child(4) { color: white !important; }
     .date-btn { min-width: 64px; padding: 8px 10px; }
     .date-btn .day-date { font-size: 12px; }
     .date-btn .day-theme { font-size: 9px; }
