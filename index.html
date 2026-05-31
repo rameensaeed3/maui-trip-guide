@@ -460,11 +460,13 @@
     .section h2 { font-size: 22px; }
     .day-card-header { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
     .day-card-header h3 { font-size: 18px; }
-    .day-card-body { padding: 14px 16px; }
-    .activity { gap: 10px; padding: 10px 0; }
-    .activity-time { min-width: 60px; font-size: 13px; }
+    .day-card-body { padding: 12px 14px; }
+    .activity { gap: 4px; padding: 10px 0; flex-direction: column; }
+    .activity-time { min-width: unset; font-size: 13px; padding-top: 0; }
     .activity-detail strong { font-size: 14px; }
-    .activity-note { font-size: 13px; }
+    .activity-note { font-size: 13px; line-height: 1.55; }
+    .activity-tags { gap: 4px; margin-top: 6px; }
+    .tag { font-size: 11px; padding: 3px 8px; }
     .bookings-table { font-size: 11px; }
     .bookings-table th, .bookings-table td { padding: 7px 7px; font-size: 12px; }
     .bookings-table th:nth-child(2), .bookings-table td:nth-child(2) { min-width: 140px; }
@@ -561,7 +563,7 @@
         <div class="activity-time">7:17 PM</div>
         <div class="activity-detail">
           <strong>Arrive OGG · Pick up Thrifty rental</strong>
-          <div class="activity-note">Collect Chevrolet Spark at the airport — confirmation <strong>L5614014575</strong>. All fees paid. Drive ~25 min south to South Kihei.</div>
+          <div class="activity-note">Collect Chevrolet Spark at the airport — confirmation <span style="white-space:nowrap"><strong>L5614014575</strong></span>. All fees paid. Drive ~25 min south to South Kihei.</div>
           <div class="activity-tags"><span class="tag tag-info">Drive: ~25 min to condo</span></div>
         </div>
       </div>
@@ -587,9 +589,8 @@
           <strong>Check in to Banyan 308 · Wind down</strong>
           <div class="activity-note">
             <strong>Address: 2575 South Kihei Road, P308, Kihei, HI 96753 [Building P]</strong><br>
-            Self check-in — <strong>door code: 7868</strong>. Physical key backup in the white lockbox near the door.<br>
-            Pick up pool code + parking pass at front desk.<br><br>
-            <strong>WiFi:</strong> Banyan308_Guest &nbsp;·&nbsp; <strong>Password:</strong> banyan808<br>
+            Self check-in — <strong>door code: 7868</strong>. Physical key backup in the white lockbox near the door. Pick up pool code + parking pass at front desk.<br><br>
+            <strong>WiFi:</strong> Banyan308_Guest &nbsp;&nbsp;<strong>Password:</strong> banyan808<br>
             <strong>Pool code:</strong> 7243<br><br>
             Lanai faces Haleakalā and gardens. Get settled and rest — big days ahead.
           </div>
@@ -642,7 +643,7 @@
         <div class="activity-time">12:30 PM</div>
         <div class="activity-detail">
           <strong>5-Line Zipline Adventure · Maui Zipline Company</strong>
-          <div class="activity-note">Five ziplines through lush upcountry Maui scenery — stunning valley and ocean views. 2 adults, fully paid. Booking # <strong>352423919</strong>. Total tour time 12:30–2:00 PM.</div>
+          <div class="activity-note">Five ziplines through lush upcountry Maui scenery — stunning valley and ocean views. 2 adults, fully paid. Booking # <span style="white-space:nowrap"><strong>352423919</strong></span>. Total tour time 12:30–2:00 PM.</div>
           <div class="activity-tags"><span class="tag tag-info">Booking #352423919 · 2 adults · Fully paid · $329.92</span></div>
         </div>
       </div>
@@ -891,7 +892,7 @@
         <div class="activity-time">12:30 PM</div>
         <div class="activity-detail">
           <strong>Check in — Atlantis Submarine Tour · Lahaina Harbor</strong>
-          <div class="activity-note">Park at the Prison Street parking lot and look for the Atlantis "Meet Here" sign. Booking # <strong>12824960</strong> · Order # <strong>6F0Q0X8Y7F6E7O6J</strong>.</div>
+          <div class="activity-note">Park at the Prison Street parking lot and look for the Atlantis "Meet Here" sign. Booking # <span style="white-space:nowrap"><strong>12824960</strong></span> · Order # <span style="white-space:nowrap"><strong>6F0Q0X8Y7F6E7O6J</strong></span>.</div>
           <div class="activity-tags"><span class="tag tag-info">Check-in 12:30 PM · Tour departs 1:00 PM</span></div>
         </div>
       </div>
