@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maui Travel Guide — May 31–Jun 5, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #1a4a5a;
+    --teal: #2d7d8e;
+    --teal-light: #4aa8bb;
+    --sand: #f5efe6;
+    --sand-deep: #e8ddd0;
+    --coral: #c06040;
+    --coral-light: #e8977a;
+    --green: #3a6b4a;
+    --green-light: #5a9b6a;
+    --text: #1c2a2e;
+    --text-mid: #3d5260;
+    --text-soft: #6b8090;
+    --white: #ffffff;
+    --warn: #8b4513;
+    --warn-bg: #fdf3ec;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ocean);
+    color: var(--white);
+    padding: 28px 48px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.18;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 20%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--teal-light);
+    opacity: 0.12;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 6px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal-light);
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .chip strong { color: white; font-weight: 500; }
+
+  /* NAV */
+  .toc {
+    background: var(--ocean);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0 48px;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+  .toc a, .toc-link {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 16px 24px;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .toc a:hover, .toc-link:hover { color: white; border-bottom-color: var(--teal-light); }
+  .toc a.toc-active, .toc-link.toc-active { color: white; border-bottom-color: var(--teal-light); }
+
+  /* LAYOUT */
+  .content { max-width: 840px; margin: 0 auto; padding: 0 32px 80px; }
+
+  /* SECTION TITLES */
+  .section { margin-top: 28px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid var(--sand-deep);
+  }
+  .section-num {
+    width: 36px; height: 36px;
+    background: var(--ocean);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 500;
+    flex-shrink: 0;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ocean);
+  }
+
+  /* BOOKINGS TABLE */
+  .bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .bookings-table th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    padding: 8px 12px;
+    background: var(--sand-deep);
+    border-bottom: 1px solid #d4c9bc;
+  }
+  .bookings-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid #ede5da;
+    color: var(--text);
+    vertical-align: top;
+    font-size: 15px;
+  }
+  .bookings-table tr:hover td { background: rgba(255,255,255,0.5); }
+  .bookings-table .cat {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+  }
+  .bookings-table .conf {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--teal);
+    background: rgba(45,125,142,0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .bookings-table .amount { font-weight: 500; color: var(--ocean); }
+  .total-row td { background: var(--ocean) !important; color: white !important; font-weight: 500; }
+  .total-row td .amount { color: white !important; }
+
+  /* DATE STRIP */
+  .date-strip {
+    position: sticky;
+    top: 49px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    background: var(--ocean);
+    border-radius: 12px;
+  }
+  .date-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: all 0.15s;
+    min-width: 70px;
+    text-align: center;
+  }
+  .date-btn:hover { background: rgba(255,255,255,0.16); }
+  .date-btn.active { background: var(--teal-light); border-color: var(--teal-light); }
+  .date-btn .day-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 3px;
+  }
+  .date-btn.active .day-label { color: rgba(255,255,255,0.85); }
+  .date-btn .day-date {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+  }
+  .date-btn .day-theme {
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  .date-btn.active .day-theme { color: rgba(255,255,255,0.75); }
+  .day-panel { display: block; }
+  .day-anchor { scroll-margin-top: 80px; }
+
+  /* DAY CARDS */
+  .day-card {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #e0d6cc;
+  }
+  .day-card-header {
+    background: var(--ocean);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .day-card-header-left { display: flex; align-items: center; gap: 16px; }
+  .day-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .day-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+  }
+  .day-card-header .vibe {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+  .day-card-body { padding: 24px 28px; }
+
+  /* ACTIVITIES */
+  .activity {
+    display: flex;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0e8e0;
+  }
+  .activity:last-child { border-bottom: none; }
+  .activity-time {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    min-width: 70px;
+    padding-top: 2px;
+    letter-spacing: 0.02em;
+  }
+  .activity-detail { flex: 1; }
+  .activity-detail strong {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .activity-note {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.6;
+  }
+  .activity-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+  .tag {
+    font-size: 12px;
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .tag-food { background: #e8f5ec; color: #2a6b3a; }
+  .tag-warn { background: var(--warn-bg); color: var(--warn); }
+  .tag-info { background: #e6f2f5; color: var(--ocean); }
+  .tag-host { background: #f5f0e8; color: #7a6040; border: 1px solid #ddd5c5; }
+  .tag-cost { background: #eef5e8; color: var(--green); }
+
+  /* TIP BOXES */
+  .tip-box {
+    background: var(--sand-deep);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+  .tip-box .tip-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .warn-box {
+    background: var(--warn-bg);
+    border-left: 3px solid var(--coral);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 15px;
+    color: #6b3020;
+    line-height: 1.6;
+  }
+  .warn-box .tip-label { color: var(--coral); }
+
+  /* FOOD SECTION */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .food-card {
+    background: white;
+    border: 1px solid #e0d6cc;
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .food-card h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ocean);
+    margin-bottom: 6px;
+  }
+  .food-card p {
+    font-size: 14px;
+    color: var(--text-soft);
+    line-height: 1.55;
+  }
+  .food-card .rec-count {
+    font-size: 13px;
+    color: var(--teal);
+    font-weight: 500;
+    margin-top: 8px;
+  }
+  .food-type {
+    display: inline-block;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-bottom: 8px;
+  }
+  .type-seafood { background: #e6f2f5; color: var(--ocean); }
+  .type-casual { background: #f5f0e8; color: #7a6040; }
+  .type-upscale { background: #eee8f5; color: #5a3a8b; }
+  .type-dessert { background: #fce8e8; color: #8b2020; }
+  .type-breakfast { background: #e8f5ec; color: #2a6b3a; }
+
+  /* TIPS SECTION */
+  .tips-list { list-style: none; }
+  .tips-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ede5da;
+    font-size: 14px;
+    color: var(--text-mid);
+    padding-left: 20px;
+    position: relative;
+  }
+  .tips-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 500;
+  }
+  .tips-list li:last-child { border-bottom: none; }
+  .tips-list li strong { color: var(--ocean); }
+
+  /* BUDGET SUMMARY */
+
+  /* FOOTER */
+  footer {
+    background: var(--ocean);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px;
+    font-size: 14px;
+    margin-top: 60px;
+  }
+  footer strong { color: rgba(255,255,255,0.8); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 20px 24px 18px; }
+    .hero h1 { font-size: 28px; }
+    .toc { padding: 0 16px; }
+    .content { padding: 0 20px 60px; }
+    .day-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .bookings-table { font-size: 12px; }
+    .bookings-table th, .bookings-table td { padding: 8px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Mother &amp; Daughter · Maui 2026</div>
+  <h1>Aloha, <em>Maui</em></h1>
+</div>
+
+<!-- NAV -->
+<nav class="toc">
+  <span class="toc-link" onclick="smoothNav('itinerary')">Itinerary</span>
+  <span class="toc-link" onclick="smoothNav('food')">Food Guide</span>
+  <span class="toc-link" onclick="smoothNav('bookings')">Bookings</span>
+</nav>
+
+<div class="content">
+
+<div class="section" id="itinerary">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <h2>Day-by-Day Itinerary</h2>
+  </div>
+
+  <!-- DATE STRIP -->
+  <div class="date-strip">
+    <button class="date-btn" onclick="scrollToDay('day-anchor-0')">
+      <div class="day-label">Day 1</div>
+      <div class="day-date">May 31</div>
+      <div class="day-theme">Arrival</div>
+    </button>
+    <button class="date-btn" onclick="scrollToDay('day-anchor-1')">
+      <div class="day-label">Day 2</div>
+      <div class="day-date">June 1</div>
+      <div class="day-theme">Zipline + Wailea</div>
+    </button>
+    <button class="date-btn" onclick="scrollToDay('day-anchor-2')">
+      <div class="day-label">Day 3</div>
+      <div class="day-date">June 2</div>
+      <div class="day-theme">Road to Hana</div>
+    </button>
+    <button class="date-btn" onclick="scrollToDay('day-anchor-3')">
+      <div class="day-label">Day 4</div>
+      <div class="day-date">June 3</div>
+      <div class="day-theme">Haleakalā</div>
+    </button>
+    <button class="date-btn" onclick="scrollToDay('day-anchor-4')">
+      <div class="day-label">Day 5</div>
+      <div class="day-date">June 4</div>
+      <div class="day-theme">West Maui</div>
+    </button>
+    <button class="date-btn" onclick="scrollToDay('day-anchor-5')">
+      <div class="day-label">Day 6</div>
+      <div class="day-date">June 5</div>
+      <div class="day-theme">Departure</div>
+    </button>
+  </div>
+
+  <div id="day-anchor-0" class="day-anchor"></div><div class="day-panel" id="dp-0">
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 1 · May 31</div>
+        <div>
+          <h3>Arrival Day</h3>
+          <div class="vibe">Land, settle, exhale</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="activity">
+        <div class="activity-time">4:40 PM</div>
+        <div class="activity-detail">
+          <strong>Depart SFO — United UA1749</strong>
+          <div class="activity-note">Nonstop to Kahului on Boeing 737 MAX 8. 5h 37m. Meals for purchase. Seats 35B / 36F.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">7:17 PM</div>
+        <div class="activity-detail">
+          <strong>Arrive OGG · Pick up Thrifty rental</strong>
+          <div class="activity-note">Collect Chevrolet Spark at the airport — confirmation <strong>L5614014575</strong>. All fees paid. Drive ~25 min south to South Kihei.</div>
+          <div class="activity-tags"><span class="tag tag-info">Drive: ~25 min to condo</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:00 PM</div>
+        <div class="activity-detail">
+          <strong>Grocery stop on the way</strong>
+          <div class="activity-note">Stop at Foodland or Safeway in Kahului or Kihei on the way to stock up on breakfast items and snacks for the trip.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie recommends Foodland for great poke bar</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:45 PM</div>
+        <div class="activity-detail">
+          <strong>Dinner: Coconuts Fish Cafe</strong>
+          <div class="activity-note">5–10 min walk from the condo. Great fish dishes — a perfect casual first dinner on Maui.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 224 locals recommend</span><span class="tag tag-food">Pescatarian-friendly</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">9:30 PM</div>
+        <div class="activity-detail">
+          <strong>Check in to Banyan 308 · Wind down</strong>
+          <div class="activity-note">
+            <strong>Address: 2575 South Kihei Road, P308, Kihei, HI 96753 [Building P]</strong><br>
+            Self check-in — <strong>door code: 7868</strong>. Physical key backup in the white lockbox near the door.<br>
+            Pick up pool code + parking pass at front desk.<br><br>
+            <strong>WiFi:</strong> Banyan308_Guest &nbsp;·&nbsp; <strong>Password:</strong> banyan808<br>
+            <strong>Pool code:</strong> 7243<br><br>
+            Lanai faces Haleakalā and gardens. Get settled and rest — big days ahead.
+          </div>
+          <div class="activity-tags"><span class="tag tag-info">Check-in after 4:00 PM · Checkout by 11:00 AM</span></div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-1 -->
+
+  <div id="day-anchor-1" class="day-anchor"></div><div class="day-panel" id="dp-1">
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 2 · June 1</div>
+        <div>
+          <h3>Zipline + South Maui</h3>
+          <div class="vibe">Morning beach · Zipline adventure · Wailea</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="activity">
+        <div class="activity-time">9:00 AM</div>
+        <div class="activity-detail">
+          <strong>Breakfast: Kihei Caffe</strong>
+          <div class="activity-note">Walkable from condo — Maui's most beloved brunch spot. Huge portions, fresh Hawaiian-style breakfast. Arrive early — lines form fast. Cash only.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 262 locals recommend</span><span class="tag tag-warn">Arrive before 9 AM or wait</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">10:00 AM</div>
+        <div class="activity-detail">
+          <strong>Kamaole Beach stroll — I, II &amp; III</strong>
+          <div class="activity-note">All three beaches are right across the street. 1.5 miles of beautiful lifeguarded sand. Sea turtles frequent this stretch in the morning. Great for walking, photos, and just sitting in the sun.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Flat · Lifeguarded</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">11:15 AM</div>
+        <div class="activity-detail">
+          <strong>Drive to Maui Zipline Company · Wailuku</strong>
+          <div class="activity-note">~30 min drive north to 1670 Honoapiilani Hwy, Wailuku, HI 96793. Arrive by 12:00 PM — check-in is 30 minutes before your scheduled time.</div>
+          <div class="activity-tags"><span class="tag tag-warn">Arrive 30 min early for check-in · Sign waivers online in advance</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:30 PM</div>
+        <div class="activity-detail">
+          <strong>5-Line Zipline Adventure · Maui Zipline Company</strong>
+          <div class="activity-note">Five ziplines through lush upcountry Maui scenery — stunning valley and ocean views. 2 adults, fully paid. Booking # <strong>352423919</strong>. Total tour time 12:30–2:00 PM.</div>
+          <div class="activity-tags"><span class="tag tag-info">Booking #352423919 · 2 adults · Fully paid · $329.92</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">5:00 PM</div>
+        <div class="activity-detail">
+          <strong>Wailea Coastal Path</strong>
+          <div class="activity-note">Drive 10 min south. 1.5-mile paved coastal trail connecting Wailea's beaches past stunning resort gardens — completely flat, breathtaking views. One of Maui's best free walks.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Flat · Easy for mom</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">6:00 PM</div>
+        <div class="activity-detail">
+          <strong>Sunset — Makena Beach or Ulupalakua Scenic Overlook</strong>
+          <div class="activity-note">Two great options depending on your mood: <strong>Makena Big Beach</strong> (15 min south) — Maui's most dramatic wide-open beach, stunning at golden hour. Or head upcountry to <strong>Ulupalakua Scenic Overlook</strong> for sweeping panoramic views of the coast and ocean from above.</div>
+          <div class="activity-tags"><span class="tag tag-info">Makena: 15 min south</span><span class="tag tag-info">Ulupalakua: 25 min upcountry</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">7:30 PM</div>
+        <div class="activity-detail">
+          <strong>Dinner: Monkeypod Kitchen by Merriman</strong>
+          <div class="activity-note">Table reserved at Wailea's best restaurant — open-air, beautiful, locally sourced fresh menu. Right next to the Shops at Wailea so you can browse after.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's top pick · 564 locals recommend</span><span class="tag tag-info">Reservation confirmed</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:00 PM</div>
+        <div class="activity-detail">
+          <strong>The Shops at Wailea</strong>
+          <div class="activity-note">Maui's premier open-air mall — Na Hoku (Hawaiian jewelry), Blue Ginger (local apparel), Honolulu Cookie Company (souvenirs), Martin &amp; MacArthur (koa wood). Live entertainment Wednesday evenings.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 265 locals recommend</span><span class="tag tag-info">Free to browse</span></div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-2 -->
+
+  <div id="day-anchor-2" class="day-anchor"></div><div class="day-panel" id="dp-2">
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 3 · June 2</div>
+        <div>
+          <h3>Road to Hana</h3>
+          <div class="vibe">Full day · Depart 7 AM · Return ~7 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="warn-box">
+        <div class="tip-label">Prep the night before</div>
+        Download the <strong>Shaka Guide audio tour app</strong> (~$15) — narrates every mile with Hawaiian history and legends. Fill gas tank in Kahului on the way out. Pack: water, snacks, layers, closed-toe shoes. Bring cash for roadside stands and banana bread.
+      </div>
+      <div class="activity">
+        <div class="activity-time">7:00 AM</div>
+        <div class="activity-detail">
+          <strong>Depart condo → Paia Town</strong>
+          <div class="activity-note">35 min to Paia — the last real town before the Hana Highway begins. Fill gas here. Grab breakfast at Paia Fish Market South Side (Laurie's recommendation for fish sandwiches) or a local café.</div>
+          <div class="activity-tags"><span class="tag tag-host">Paia Fish Market — Laurie's pick</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:15 AM · MM 7</div>
+        <div class="activity-detail">
+          <strong>Stop 1 — Rainbow Eucalyptus Trees</strong>
+          <div class="activity-note">Short flat walk into a rainforest path. Massive trees with spectacular multicolored peeling bark — one of the most photographed spots on the road. Completely easy — no elevation.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Flat · 10 min</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:45 AM · MM 10.5</div>
+        <div class="activity-detail">
+          <strong>Stop 2 — Garden of Eden Arboretum</strong>
+          <div class="activity-note">500+ tropical plants in a beautifully maintained open garden. Flat paths, stunning flora, gorgeous ocean views. Open 8am–4pm. The best stop for non-hikers on the whole road.</div>
+          <div class="activity-tags"><span class="tag tag-cost">~$20/person</span><span class="tag tag-info">Flat · Accessible · Gorgeous</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">10:30 AM · MM 17</div>
+        <div class="activity-detail">
+          <strong>Stop 3 — Keanae Peninsula + Banana Bread</strong>
+          <div class="activity-note">Dramatic lava rock coastline with waves crashing ashore. Pick up Aunty Sandy's famous homemade banana bread here — a Road to Hana institution. Almost no walking required.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick — Twin Falls also recommended</span><span class="tag tag-food">Banana bread — bring cash</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">11:15 AM · MM 18</div>
+        <div class="activity-detail">
+          <strong>Stop 4 — Wailua Valley Overlook</strong>
+          <div class="activity-note">Short staircase (sturdy handrails) to sweeping panoramas of taro fields, Ke'anae Valley, and waterfalls on clear days. Quick, beautiful, easy for mom.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:00 PM · MM 22</div>
+        <div class="activity-detail">
+          <strong>Stop 5 — Pua'a Ka'a Falls (Lunch break)</strong>
+          <div class="activity-note">Free rest stop with restrooms + 0.3-mile flat walk to a 15-foot accessible waterfall. Picnic tables under bamboo — perfect lunch stop. Pick up fruit from roadside stands along the way.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Restrooms · Accessible waterfall</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">1:30 PM</div>
+        <div class="activity-detail">
+          <strong>Stop 6 — Wailua Falls</strong>
+          <div class="activity-note">Iconic 80-foot waterfall completely visible from the road — zero hiking. Step out of the car and you're face to face with one of Maui's most beautiful waterfalls surrounded by lush rainforest.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · No hiking · Roadside</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">2:30 PM · MM 29</div>
+        <div class="activity-detail">
+          <strong>Stop 7 — Nahiku Marketplace</strong>
+          <div class="activity-note">Cluster of local food vendors — smoothies, tacos, snacks. Good break before Hana town.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">3:00 PM</div>
+        <div class="activity-detail">
+          <strong>Hana Town + Wainapanapa Black Sand Beach</strong>
+          <div class="activity-note">Quick stop in sleepy Hana town, then drive to Wainapanapa State Park — one of Maui's most dramatic spots. Jet-black sand beach framed by lava cliffs, sea arches, and crashing waves. Short easy coastal walk. Requires advance parking permit — book at gostateparks.hawaii.gov before your trip ($10 + $10 parking).</div>
+          <div class="activity-tags"><span class="tag tag-warn">Advance permit required — book at gostateparks.hawaii.gov</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">3:30 PM</div>
+        <div class="activity-detail">
+          <strong>Return drive to Kihei</strong>
+          <div class="activity-note">~2.5 hrs back. Stop at any waterfall you missed on the way out — far fewer cars on the return. Arrive condo ~7pm. Easy dinner tonight — Coconuts Fish Cafe is a 5-10 min walk (Laurie's pick).</div>
+          <div class="activity-tags"><span class="tag tag-host">Coconuts Fish Cafe nearby — Laurie's pick · 224 locals</span></div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-3 -->
+
+  <div id="day-anchor-3" class="day-anchor"></div><div class="day-panel" id="dp-3">
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 4 · June 3</div>
+        <div>
+          <h3>Haleakalā + Upcountry Maui</h3>
+          <div class="vibe">No sunrise reservation needed · Depart 9 AM</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="warn-box">
+        <div class="tip-label">Pack warm layers — both of you</div>
+        The summit is 10,023 feet and 30–40°F in June with strong winds. Pack real jackets, long pants, and a hat. No sunrise reservation needed after 7 AM — just pay $30/car at the gate and drive up anytime.
+      </div>
+      <div class="activity">
+        <div class="activity-time">9:00 AM</div>
+        <div class="activity-detail">
+          <strong>Depart → Haleakalā Summit</strong>
+          <div class="activity-note">~45-min drive. The ascent itself is extraordinary — tropical coast to upcountry farms to above-cloud volcanic moonscape. One of Maui's most dramatic experiences.</div>
+          <div class="activity-tags"><span class="tag tag-cost">$30/car park entrance</span><span class="tag tag-host">Laurie's pick · 376 locals recommend</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">10:00 AM</div>
+        <div class="activity-detail">
+          <strong>Summit Visitor Center + Crater Views</strong>
+          <div class="activity-note">Free exhibits on the volcano's geology and rare silversword plants. Walk to the Summit Overlook and Kalahaku Overlook — standing at 10,023 feet above the clouds is genuinely otherworldly. Allow 2 hours.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:30 PM</div>
+        <div class="activity-detail">
+          <strong>Makawao Town — Upcountry Maui</strong>
+          <div class="activity-note">Charming paniolo (Hawaiian cowboy) town on the drive down. Art galleries, boutique shops, completely different energy from beachside Kihei — cooler, lush, and full of local character. Make a quick stop at <strong>Sacred Garden of Maliko</strong> — a serene botanical sanctuary just outside town with lush tropical gardens and a peaceful, spiritual atmosphere.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:45 PM</div>
+        <div class="activity-detail">
+          <strong>Komoda Store &amp; Bakery</strong>
+          <div class="activity-note">Legendary Makawao institution — famous cream puffs, malasadas, and stick donuts. Sells out completely. Arrive by 1pm on weekdays for your best shot. A must-do in Upcountry.</div>
+          <div class="activity-tags"><span class="tag tag-warn">Sells out fast — arrive early</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">1:30 PM</div>
+        <div class="activity-detail">
+          <strong>Lunch in Makawao</strong>
+          <div class="activity-note">Several good spots — Casanova's (beloved local Italian), The Makawao Garden Cafe (salads, vegetarian). Browse the galleries and boutiques after lunch.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">3:00 PM</div>
+        <div class="activity-detail">
+          <strong>Surfing Goat Dairy</strong>
+          <div class="activity-note">Upcountry goat dairy farm offering tours and fresh goat cheese tastings — a fun, totally unique Maui experience. Great for a relaxed afternoon stop with your mom.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 95 locals recommend</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">6:30 PM</div>
+        <div class="activity-detail">
+          <strong>Evening: Shops at Wailea + Gather on Maui</strong>
+          <div class="activity-note">Wednesday evening has free live entertainment at The Shops at Wailea — a perfect relaxed evening after a big day.</div>
+          
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-4 -->
+
+  <div id="day-anchor-4" class="day-anchor"></div><div class="day-panel" id="dp-4">
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 5 · June 4</div>
+        <div>
+          <h3>West Maui Adventure</h3>
+          <div class="vibe">Kihei morning · West Maui adventure · Submarine + coast</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="activity">
+        <div class="activity-time">8:00 AM</div>
+        <div class="activity-detail">
+          <strong>South Maui Gardens + Kihei Food Oasis</strong>
+          <div class="activity-note">Lush 6-acre community oasis with 10+ food trucks, plant nursery, live music, and a Thursday Artisan &amp; Farmers Market. Free to explore. Perfect relaxed morning wander for local crafts and souvenirs before the drive west.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 64 locals · Thursday market</span><span class="tag tag-info">Free to browse</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">10:30 AM</div>
+        <div class="activity-detail">
+          <strong>The Maui Butterfly Farm</strong>
+          <div class="activity-note">Hawaii's only walk-in butterfly flight house — a certified Monarch Waystation at 820 Olowalu Village Rd, just 10 min south of Lahaina on the drive over. Hand-feed butterflies and caterpillars, learn about conservation efforts. Guided tour ~45 min. A gentle, beautiful stop perfect for your mom.</div>
+          <div class="activity-tags"><span class="tag tag-warn">Open 9am–1pm daily · Book in advance — sells out</span><span class="tag tag-info">~$50/person · 45 min tour</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">12:30 PM</div>
+        <div class="activity-detail">
+          <strong>Check in — Atlantis Submarine Tour · Lahaina Harbor</strong>
+          <div class="activity-note">Park at the Prison Street parking lot and look for the Atlantis "Meet Here" sign. Booking # <strong>12824960</strong> · Order # <strong>6F0Q0X8Y7F6E7O6J</strong>.</div>
+          <div class="activity-tags"><span class="tag tag-info">Check-in 12:30 PM · Tour departs 1:00 PM</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">1:00 PM</div>
+        <div class="activity-detail">
+          <strong>Atlantis Submarine Tour Maui</strong>
+          <div class="activity-note">Descend 100 feet below the surface in a real submarine — coral reefs, tropical fish, and the sunken Carthaginian wreck without getting wet. A completely unique experience, perfect for your mom. Total tour time ~1hr 50min including the shuttle boat ride out.</div>
+          <div class="activity-tags"><span class="tag tag-info">2 adults · $128/person · Fully paid</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">3:00 PM</div>
+        <div class="activity-detail">
+          <strong>Lunch: Duke's Beach House · Ka'anapali</strong>
+          <div class="activity-note">Open-air beachfront restaurant right on Ka'anapali North Beach at the Honua Kai Resort. Locally sourced fresh seafood, fish tacos, poke, and Hawaiian-inspired plates. Stunning ocean views. Reservation recommended — call 808-662-2900.</div>
+          <div class="activity-tags"><span class="tag tag-food">Fresh seafood · Halal-safe</span><span class="tag tag-warn">Reserve ahead · Lunch service until 4:00 PM</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">4:30 PM</div>
+        <div class="activity-detail">
+          <strong>Kapalua Coastal Trail</strong>
+          <div class="activity-note">Easy 2.5-mile out-and-back coastal trail rated 4.7 stars from 5,000+ reviews. Passes Kapalua Bay Beach, lava rock formations, tidepools, the Dragon's Teeth lava cliffs, and ends at DT Fleming Beach. Minimal elevation change — perfectly accessible for your mom. Allow ~1.5 hrs.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Easy · ~1.5 hrs · Wear good walking shoes</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">6:00 PM</div>
+        <div class="activity-detail">
+          <strong>Kahekili Beach Park + Ka'anapali Beach</strong>
+          <div class="activity-note">Short stops on the drive back south. Kahekili (aka Airport Beach) is a calm, uncrowded stretch beloved by locals. Then Ka'anapali's famous wide white sand beach for a golden-hour walk — one of Maui's most iconic beaches.</div>
+          <div class="activity-tags"><span class="tag tag-info">Free · Easy beach walk</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">7:30 PM</div>
+        <div class="activity-detail">
+          <strong>Ululani's Hawaiian Shave Ice — on the way back</strong>
+          <div class="activity-note">Stop at the Kihei location on the drive back to the condo. The perfect sweet end to a full day on the West side.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 132 locals recommend</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:30 PM</div>
+        <div class="activity-detail">
+          <strong>Final dinner: Nalu's South Shore Grill</strong>
+          <div class="activity-note">Local community restaurant with live entertainment — Laurie says it "gives back to the community." Great food, great vibes, perfect for a celebratory last night.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 236 locals recommend</span></div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-5 -->
+
+  <div id="day-anchor-5" class="day-anchor"></div><div class="day-panel" id="dp-5">
+  <!-- DAY 6 -->
+  <div class="day-card">
+    <div class="day-card-header">
+      <div class="day-card-header-left">
+        <div class="day-badge">Day 6 · June 5</div>
+        <div>
+          <h3>Departure</h3>
+          <div class="vibe">Checkout 11 AM · Flight 1:49 PM · Mahalo, Maui</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-card-body">
+      <div class="activity">
+        <div class="activity-time">7:00 AM</div>
+        <div class="activity-detail">
+          <strong>Final Kamaole Beach sunrise walk</strong>
+          <div class="activity-note">One last walk across the street before the world wakes up. Best morning for seeing sea turtles in calm water. Take it slow.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">8:00 AM</div>
+        <div class="activity-detail">
+          <strong>Breakfast: Akamai Coffee @ Wailea Village</strong>
+          <div class="activity-note">Laurie's recommendation for a final coffee stop — delicious coffee and light breakfast options. Short drive.</div>
+          <div class="activity-tags"><span class="tag tag-host">Laurie's pick · 37 locals recommend</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">10:30 AM</div>
+        <div class="activity-detail">
+          <strong>Check out of Banyan 308</strong>
+          <div class="activity-note">Checkout by 11:00 AM sharp. Leave condo tidy. Return pool code card and parking pass to the front desk. Laurie charges for excessive cleaning — leave it as you found it.</div>
+          <div class="activity-tags"><span class="tag tag-warn">Out by 11:00 AM — no exceptions</span></div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">11:15 AM</div>
+        <div class="activity-detail">
+          <strong>Return car at Thrifty, OGG</strong>
+          <div class="activity-note">25-min drive to Kahului Airport. Return Chevrolet Spark — drop-off by 11:30 AM (confirmation L5614014575). Allow time for shuttle to terminal.</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-time">1:49 PM</div>
+        <div class="activity-detail">
+          <strong>Depart OGG — United UA628</strong>
+          <div class="activity-note">Nonstop to SFO. 4h 59m. Seats 34E / 34F. Arrive SFO 9:48 PM. A perfect trip.</div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  </div><!-- end dp-5 -->
+</div><!-- end itinerary -->
+
+
+<div class="section" id="food">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <h2>Food Guide</h2>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px">Walkable from condo (South Kihei)</p>
+  <div class="food-grid" style="margin-bottom:28px">
+    <div class="food-card">
+      <span class="food-type type-breakfast">Breakfast / Brunch</span>
+      <h4>Kihei Caffe</h4>
+      <p>Maui's most beloved brunch spot. Huge portions, classic Hawaiian-style breakfast. Cash only. Arrive early.</p>
+      <div class="rec-count">Laurie's pick · 262 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-seafood">Fresh Seafood</span>
+      <h4>South Maui Fish Company</h4>
+      <p>Local food truck — poke bowls, fish tacos, grilled plates from locally caught daily fish. Poke sells out by 1pm.</p>
+      <div class="rec-count">Halal-safe · Open Mon–Sat 11:30am–2:30pm</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-casual">Casual</span>
+      <h4>808 Deli</h4>
+      <p>5-min walk from condo, directly across from Kamaole II. Fresh salads, sandwiches, bowls. Great for a quick meal.</p>
+      <div class="rec-count">Laurie's pick · 95 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-seafood">Seafood</span>
+      <h4>Coconuts Fish Cafe (Azeka)</h4>
+      <p>Great shrimp scampi and fish dishes. 5–10 min walk from condo.</p>
+      <div class="rec-count">Laurie's pick · 224 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-casual">Casual / Live Music</span>
+      <h4>Nalu's South Shore Grill</h4>
+      <p>Community restaurant that gives back locally. Live entertainment, good food, true aloha spirit.</p>
+      <div class="rec-count">Laurie's pick · 236 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-casual">Casual</span>
+      <h4>Fork and Salad Kihei</h4>
+      <p>Delicious salads and soups — great for a lighter, healthy meal. Vegetarian-friendly.</p>
+      <div class="rec-count">Laurie's pick · 38 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-casual">Casual / Bar</span>
+      <h4>Moose McGillycuddy's</h4>
+      <p>Fish &amp; chips and chicken sandwich highlights. Monday bingo nights, Wednesday trivia. Great for watching sports.</p>
+      <div class="rec-count">Laurie's pick · 118 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-dessert">Dessert</span>
+      <h4>Ululani's Hawaiian Shave Ice</h4>
+      <p>Kihei's most celebrated shave ice. Try local flavors with li hing mui or mochi.</p>
+      <div class="rec-count">Laurie's pick · 132 locals recommend</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px">Wailea (10-min drive)</p>
+  <div class="food-grid" style="margin-bottom:28px">
+    <div class="food-card">
+      <span class="food-type type-upscale">Upscale</span>
+      <h4>Monkeypod Kitchen by Merriman</h4>
+      <p>Maui's most celebrated casual-upscale restaurant. Fresh, locally sourced menu. Beautiful open-air setting in Wailea. Reserve ahead on OpenTable.</p>
+      <div class="rec-count">Laurie's top pick · 564 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-upscale">Upscale Views</span>
+      <h4>Gather on Maui</h4>
+      <p>Beautiful sunset views — Laurie specifically calls this out as one of her favorites. Great for dinner with a view.</p>
+      <div class="rec-count">Laurie's pick · 93 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-upscale">Splurge</span>
+      <h4>Lehua Lounge (Andaz)</h4>
+      <p>Pricey, but Laurie says the views are amazing. Perfect for sunset views on a special evening.</p>
+      <div class="rec-count">Laurie's pick · Great views</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-upscale">Fine Dining</span>
+      <h4>Matteo's Osteria</h4>
+      <p>Delicious Italian 10 min from condo. Good for a special dinner if you want something different.</p>
+      <div class="rec-count">Laurie's pick · 49 locals recommend</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px">Desserts &amp; Coffee</p>
+  <div class="food-grid" style="margin-bottom:28px">
+    <div class="food-card">
+      <span class="food-type type-dessert">Must-Do</span>
+      <h4>Cinnamon Roll Place</h4>
+      <p>10-min walk from condo. Famous cinnamon buns — always lined up, always worth it. Arrive early.</p>
+      <div class="rec-count">Laurie's pick · 58 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-dessert">Malasadas</span>
+      <h4>Sugar Beach Bake Shop</h4>
+      <p>"One word: Malasadas." Strict hours, always lined up. Worth planning around.</p>
+      <div class="rec-count">Laurie's pick · 62 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-breakfast">Coffee</span>
+      <h4>Akamai Coffee @ Wailea Village</h4>
+      <p>Delicious coffee and some breakfast options. Good departure morning stop.</p>
+      <div class="rec-count">Laurie's pick · 37 locals recommend</div>
+    </div>
+    <div class="food-card">
+      <span class="food-type type-dessert">Upcountry</span>
+      <h4>Komoda Store &amp; Bakery (Makawao)</h4>
+      <p>Legendary cream puffs and stick donuts. Sells out by mid-morning. On Day 4 Haleakalā route.</p>
+      <div class="rec-count">Makawao institution · Go early</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-soft);margin-bottom:16px">Special Occasion</p>
+  <div class="food-grid">
+    <div class="food-card">
+      <span class="food-type type-upscale">Island Legend</span>
+      <h4>Mama's Fish House</h4>
+      <p>Laurie's top fine dining pick — 812 locals recommend. Fresh daily-caught fish with incredible service. If you want a splurge dinner, book now — reservations fill weeks/months out.</p>
+      <div class="rec-count">Laurie's top pick · 812 locals recommend · Book ASAP</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: ESSENTIALS ===== -->
+
+<div class="section" id="bookings">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <h2>Confirmed Bookings &amp; Costs</h2>
+  </div>
+
+  <table class="bookings-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Details</th>
+        <th>Confirmation</th>
+        <th style="text-align:right">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="cat">Flights</span></td>
+        <td>
+          United UA1749 · SFO→OGG · May 31 · 4:40pm–7:17pm · Nonstop · Seats 35B/36F<br>
+          United UA628 · OGG→SFO · Jun 5 · 1:49pm–9:48pm · Nonstop · Seats 34E/34F<br>
+          <small style="color:#888">2 travelers · Boeing 737 MAX 8</small>
+        </td>
+        <td><span class="conf">DTQS7V</span></td>
+        <td class="amount" style="text-align:right">$1,000.40</td>
+      </tr>
+      <tr>
+        <td><span class="cat">Accommodation</span></td>
+        <td>
+          Chic Maui Condo · Banyan 308 · Hosted by Laurie<br>
+          2575 S Kihei Rd, Kihei, HI 96753<br>
+          Check-in: Sun May 31 after 4:00 PM · Checkout: Fri Jun 5 by 11:00 AM<br>
+          <small style="color:#888">5 nights · 2 adults · $27 resort fee included in total</small>
+        </td>
+        <td><span class="conf">Airbnb</span></td>
+        <td class="amount" style="text-align:right">$1,425.43</td>
+      </tr>
+      <tr>
+        <td><span class="cat">Rental Car</span></td>
+        <td>
+          Thrifty Car Rental · Chevrolet Spark or similar<br>
+          Pickup: OGG Airport · Sun May 31 · 8:00 PM<br>
+          Drop-off: OGG Airport · Fri Jun 5 · 11:30 AM<br>
+          <small style="color:#888">Unlimited miles · All fees &amp; taxes included</small>
+        </td>
+        <td><span class="conf">L5614014575</span></td>
+        <td class="amount" style="text-align:right">$281.46</td>
+      </tr>
+      <tr>
+        <td><span class="cat">Activity</span></td>
+        <td>
+          5-Line Zipline Adventure · Maui Zipline Company<br>
+          Mon Jun 1 · 12:30 PM – 2:00 PM · 2 adults<br>
+          1670 Honoapiilani Hwy, Wailuku, HI 96793<br>
+          <small style="color:#888">Arrive 30 min early for check-in · Sign waivers online in advance</small>
+        </td>
+        <td><span class="conf">352423919</span></td>
+        <td class="amount" style="text-align:right">$329.92</td>
+      </tr>
+      <tr>
+        <td><span class="cat">Activity</span></td>
+        <td>
+          Atlantis Submarine Tour Maui · Jun 4 · 1:00 PM (Check-in 12:30 PM)<br>
+          2 adults · 100 ft below the surface · ~45 min tour<br>
+          <small style="color:#888">Booking # 12824960 · Order # 6F0Q0X8Y7F6E7O6J</small>
+        </td>
+        <td><span class="conf">12824960</span></td>
+        <td class="amount" style="text-align:right">$277.74</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="3"><strong>Total Confirmed</strong></td>
+        <td class="amount" style="text-align:right"><strong>$3,314.95</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<!-- ===== SECTION 2: ITINERARY ===== -->
+
+</div><!-- end content -->
+
+<footer>
+  Maui Travel Guide · Mother &amp; Daughter Trip · May 31 – June 5, 2026
+</footer>
+
+
+<script>
+function smoothNav(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    var top = el.getBoundingClientRect().top + window.pageYOffset - 56;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+  document.querySelectorAll('.toc-link').forEach(function(a) { a.classList.remove('toc-active'); });
+  document.querySelectorAll('.toc-link').forEach(function(a) {
+    if (a.getAttribute('onclick') && a.getAttribute('onclick').includes("'" + id + "'")) {
+      a.classList.add('toc-active');
+    }
+  });
+}
+function scrollToDay(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    var offset = 80;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+  document.querySelectorAll('.date-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  var idx = parseInt(id.replace('day-anchor-', ''));
+  var btns = document.querySelectorAll('.date-btn');
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+
+// Highlight active day in strip on scroll
+window.addEventListener('scroll', function() {
+  var anchors = document.querySelectorAll('.day-anchor');
+  var btns = document.querySelectorAll('.date-btn');
+  var scrollPos = window.pageYOffset + 120;
+  var active = 0;
+  anchors.forEach(function(a, i) {
+    if (a.offsetTop <= scrollPos) active = i;
+  });
+  btns.forEach(function(b, i) { b.classList.toggle('active', i === active); });
+});
+</script>
+</body>
+</html>
