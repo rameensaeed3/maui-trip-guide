@@ -194,58 +194,70 @@
   .total-row td .amount { color: white !important; }
 
   /* DATE STRIP */
-  .date-strip {
+  .date-strip-wrapper {
     position: sticky;
     top: 49px;
     z-index: 100;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-    padding: 14px 16px;
     background: var(--ocean);
-    border-radius: 12px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
   }
+  .date-strip {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0;
+    gap: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .date-strip::-webkit-scrollbar { display: none; }
   .date-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 0 0 auto;
     padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.08);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    background: transparent;
     cursor: pointer;
-    transition: all 0.15s;
-    min-width: 70px;
+    transition: background 0.15s;
+    min-width: 72px;
     text-align: center;
   }
-  .date-btn:hover { background: rgba(255,255,255,0.16); }
-  .date-btn.active { background: var(--teal-light); border-color: var(--teal-light); }
+  .date-btn:last-child { border-right: none; }
+  .date-btn:hover { background: rgba(255,255,255,0.1); }
+  .date-btn.active { background: var(--teal-light); }
   .date-btn .day-label {
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 9px;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.6);
     margin-bottom: 3px;
   }
-  .date-btn.active .day-label { color: rgba(255,255,255,0.85); }
+  .date-btn.active .day-label { color: rgba(255,255,255,0.9); }
   .date-btn .day-date {
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     color: white;
     white-space: nowrap;
   }
   .date-btn .day-theme {
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(255,255,255,0.55);
     margin-top: 2px;
     white-space: nowrap;
   }
-  .date-btn.active .day-theme { color: rgba(255,255,255,0.75); }
+  .date-btn.active .day-theme { color: rgba(255,255,255,0.85); }
   .day-panel { display: block; }
-  .day-anchor { scroll-margin-top: 80px; }
+  .day-anchor { scroll-margin-top: 100px; }
 
   /* DAY CARDS */
   .day-card {
@@ -438,13 +450,31 @@
   footer strong { color: rgba(255,255,255,0.8); }
 
   @media (max-width: 600px) {
-    .hero { padding: 20px 24px 18px; }
-    .hero h1 { font-size: 28px; }
-    .toc { padding: 0 16px; }
-    .content { padding: 0 20px 60px; }
-    .day-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-    .bookings-table { font-size: 12px; }
-    .bookings-table th, .bookings-table td { padding: 8px 8px; }
+    .hero { padding: 16px 16px 14px; }
+    .hero h1 { font-size: 24px; }
+    .hero-eyebrow { font-size: 10px; margin-bottom: 4px; }
+    .toc { padding: 0 8px; }
+    .toc a, .toc-link { font-size: 12px; padding: 12px 14px; letter-spacing: 0.02em; }
+    .content { padding: 0 12px 60px; }
+    .section { margin-top: 18px; }
+    .section h2 { font-size: 22px; }
+    .day-card-header { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .day-card-header h3 { font-size: 18px; }
+    .day-card-body { padding: 14px 16px; }
+    .activity { gap: 10px; padding: 10px 0; }
+    .activity-time { min-width: 60px; font-size: 13px; }
+    .activity-detail strong { font-size: 14px; }
+    .activity-note { font-size: 13px; }
+    .bookings-table { font-size: 11px; }
+    .bookings-table th, .bookings-table td { padding: 7px 7px; font-size: 12px; }
+    .bookings-table th:nth-child(2), .bookings-table td:nth-child(2) { min-width: 140px; }
+    .date-btn { min-width: 64px; padding: 8px 10px; }
+    .date-btn .day-date { font-size: 12px; }
+    .date-btn .day-theme { font-size: 9px; }
+    .food-grid { grid-template-columns: 1fr; }
+    .tip-box, .warn-box { font-size: 13px; padding: 12px 14px; }
+    .section-header { gap: 10px; margin-bottom: 12px; }
+    .section-num { width: 28px; height: 28px; font-size: 11px; }
   }
 </style>
 </head>
@@ -472,7 +502,8 @@
   </div>
 
   <!-- DATE STRIP -->
-  <div class="date-strip">
+  <div class="date-strip-wrapper">
+  <div class="date-strip" id="date-strip">
     <button class="date-btn" onclick="scrollToDay('day-anchor-0')">
       <div class="day-label">Day 1</div>
       <div class="day-date">May 31</div>
@@ -503,6 +534,7 @@
       <div class="day-date">June 5</div>
       <div class="day-theme">Departure</div>
     </button>
+  </div>
   </div>
 
   <div id="day-anchor-0" class="day-anchor"></div><div class="day-panel" id="dp-0">
@@ -1188,10 +1220,30 @@
 
 
 <script>
+// Day date map: index → YYYY-MM-DD
+var dayDates = {
+  0: '2026-05-31',
+  1: '2026-06-01',
+  2: '2026-06-02',
+  3: '2026-06-03',
+  4: '2026-06-04',
+  5: '2026-06-05'
+};
+
+function getTocHeight() {
+  var toc = document.querySelector('.toc');
+  return toc ? toc.offsetHeight : 0;
+}
+
+function getStripHeight() {
+  var wrapper = document.querySelector('.date-strip-wrapper');
+  return wrapper ? wrapper.offsetHeight : 0;
+}
+
 function smoothNav(id) {
   var el = document.getElementById(id);
   if (el) {
-    var top = el.getBoundingClientRect().top + window.pageYOffset - 56;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - getTocHeight() - 8;
     window.scrollTo({ top: top, behavior: 'smooth' });
   }
   document.querySelectorAll('.toc-link').forEach(function(a) { a.classList.remove('toc-active'); });
@@ -1201,31 +1253,70 @@ function smoothNav(id) {
     }
   });
 }
+
 function scrollToDay(id) {
   var el = document.getElementById(id);
   if (el) {
-    var offset = 80;
+    var offset = getTocHeight() + getStripHeight() + 12;
     var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: top, behavior: 'smooth' });
   }
-  document.querySelectorAll('.date-btn').forEach(function(b) {
-    b.classList.remove('active');
-  });
   var idx = parseInt(id.replace('day-anchor-', ''));
-  var btns = document.querySelectorAll('.date-btn');
-  if (btns[idx]) btns[idx].classList.add('active');
+  setActiveDayBtn(idx);
 }
 
-// Highlight active day in strip on scroll
+function setActiveDayBtn(idx) {
+  var btns = document.querySelectorAll('.date-btn');
+  btns.forEach(function(b, i) { b.classList.toggle('active', i === idx); });
+  // Scroll the active button into view within the strip
+  var strip = document.getElementById('date-strip');
+  var activeBtn = btns[idx];
+  if (strip && activeBtn) {
+    var scrollTarget = activeBtn.offsetLeft - (strip.offsetWidth / 2) + (activeBtn.offsetWidth / 2);
+    strip.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+  }
+}
+
+// Highlight active day on page scroll
 window.addEventListener('scroll', function() {
   var anchors = document.querySelectorAll('.day-anchor');
-  var btns = document.querySelectorAll('.date-btn');
-  var scrollPos = window.pageYOffset + 120;
+  var offset = getTocHeight() + getStripHeight() + 20;
+  var scrollPos = window.pageYOffset + offset;
   var active = 0;
   anchors.forEach(function(a, i) {
     if (a.offsetTop <= scrollPos) active = i;
   });
+  var btns = document.querySelectorAll('.date-btn');
   btns.forEach(function(b, i) { b.classList.toggle('active', i === active); });
+  // Scroll strip to keep active btn visible
+  var strip = document.getElementById('date-strip');
+  var activeBtn = btns[active];
+  if (strip && activeBtn) {
+    var btnLeft = activeBtn.offsetLeft;
+    var btnRight = btnLeft + activeBtn.offsetWidth;
+    if (btnLeft < strip.scrollLeft || btnRight > strip.scrollLeft + strip.offsetWidth) {
+      var scrollTarget = btnLeft - (strip.offsetWidth / 2) + (activeBtn.offsetWidth / 2);
+      strip.scrollTo({ left: scrollTarget, behavior: 'smooth' });
+    }
+  }
+});
+
+// Auto-scroll to current date on load
+window.addEventListener('load', function() {
+  var today = new Date();
+  var pad = function(n) { return String(n).padStart(2, '0'); };
+  var todayStr = today.getFullYear() + '-' + pad(today.getMonth() + 1) + '-' + pad(today.getDate());
+  var matchIdx = -1;
+  Object.keys(dayDates).forEach(function(i) {
+    if (dayDates[i] === todayStr) matchIdx = parseInt(i);
+  });
+  if (matchIdx >= 0) {
+    // Today is within the trip — scroll to that day after a short delay
+    setTimeout(function() { scrollToDay('day-anchor-' + matchIdx); }, 400);
+  } else {
+    // Out of range — just highlight Day 1 and stay at top
+    setActiveDayBtn(0);
+  }
 });
 </script>
 </body>
